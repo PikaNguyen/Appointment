@@ -32,10 +32,13 @@ export class AppointmentListComponent {
       this.newAppointmentDate = new Date();
 
       console.log("length: "+this.appointments.length)
+
+      localStorage.setItem("appointments", JSON.stringify(this.appointments))
     }
   }
 
   deleteAppointment(index : number){
     this.appointments.splice(index, 1)
+    localStorage.setItem("appointments", JSON.stringify(this.appointments))
   }
 }
