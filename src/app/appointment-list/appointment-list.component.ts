@@ -18,4 +18,8 @@ export class AppointmentListComponent {
   newAppointmentDate = new Date()
 
   appointments : Appointment[] = []
+
+  addAppointment(){
+    alert(this.newAppointmentTitle + " " + this.newAppointmentDate)
+  }
 }
