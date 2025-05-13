@@ -13,4 +13,9 @@ export class AppointmentListComponent {
     title : "Petting cat",
     date : new Date(),
   }
+
+  newAppointmentTitle = ""
+  newAppointmentDate = new Date()
+
+  appointments : Appointment[] = []
 }

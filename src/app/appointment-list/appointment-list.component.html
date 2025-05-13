@@ -1,3 +1,10 @@
 <p>{{appointment.id}}</p>
 <p>{{appointment.title}}</p>
 <p>{{appointment.date}}</p>
+
+<div>
+    <input [(ngModel)] = "newAppointmentTitle" placeholder="Input the appointment's title">
+    <input [(ngModel)] = "newAppointmentDate" type="date" placeholder="Choose appointment's date">
+    <button (click)="addAppointment()" >Add</button>
+
+</div>
