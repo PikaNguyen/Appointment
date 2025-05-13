@@ -34,4 +34,8 @@ export class AppointmentListComponent {
       console.log("length: "+this.appointments.length)
     }
   }
+
+  deleteAppointment(index : number){
+    this.appointments.splice(index, 1)
+  }
 }
