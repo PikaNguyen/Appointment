@@ -20,6 +20,18 @@ export class AppointmentListComponent {
   appointments : Appointment[] = []
 
   addAppointment(){
-    alert(this.newAppointmentTitle + " " + this.newAppointmentDate)
+    if( this.newAppointmentTitle.trim().length && this.newAppointmentDate){
+      let newAppointment : Appointment = {
+        id : Date.now(),
+        title: this.newAppointmentTitle,
+        date: this.newAppointmentDate
+      }
+
+      this.appointments.push(newAppointment)
+      this.newAppointmentTitle = "";
+      this.newAppointmentDate = new Date();
+
+      console.log("length: "+this.appointments.length)
+    }
   }
 }
