@@ -1,12 +1,22 @@
 import { Component } from '@angular/core';
 import { Appointment } from '../models/appointment';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-appointment-list',
   templateUrl: './appointment-list.component.html',
   styleUrls: ['./appointment-list.component.css']
 })
-export class AppointmentListComponent {
+export class AppointmentListComponent implements OnInit {
+  
+  ngOnInit(): void {
+    console.log("Got loading ........")
+    let savedAppointments = localStorage.getItem("appointments")
+    if (savedAppointments){
+      this.appointments = JSON.parse(savedAppointments)
+    }
+  }
+
 
   appointment : Appointment = {
     id: 1,
